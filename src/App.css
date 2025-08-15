@@ -1,0 +1,19 @@
+.app {
+  height: 100vh;
+  width: 100vw;
+}
+.grid-container {
+  border: 10px ridge rgb(54, 26, 10);
+  border-radius: 12px;
+  height: 50%;
+  width: 50%;
+  margin: 20px;
+  background:linear-gradient(to bottom, #432d25, #6e4708);
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  grid: template rows 1fr;
+  gap: 0px;
+}
+.gridItem{
+  border: 1px solid white;
+}

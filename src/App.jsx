@@ -1,15 +1,16 @@
-import Shelf from './components/Shelf'
-import Desk from './components/Desk'
-// import Potions from './components/Potions'
-import './App.css'
+import Shelf from "./components/Shelf";
+import Desk from "./components/Desk";
+import "./App.css";
 
 function App() {
   return (
     <>
-     <Shelf/>
-     <Desk/>
+      <div className="app">
+        <Shelf />
+        <Desk />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

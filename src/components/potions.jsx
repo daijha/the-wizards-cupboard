@@ -1,3 +1,6 @@
+
+import React from "react";
+
 const magicalItems = [
   {
     name: "salamanderSaliva",
@@ -36,18 +39,16 @@ const magicalItems = [
     status: "expired",
   },
 ];
+
 // map iterates over the array and creates list items
 function Potions() {
   return (
     <>
-      <h1>Potions</h1>
-      <ul>
-        {magicalItems.map((item, index) => (
-          <li key={index}>
-            {item.name} {item.description + item.status}
-          </li>
-        ))}
-      </ul>
+     { magicalItems.map((item,index)=>(
+      <div key={index}> 
+        <img className="gridItem" src={`/${item.name}.svg`}/>
+        </div>
+      ))}
     </>
   );
 }
