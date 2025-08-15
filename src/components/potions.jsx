@@ -40,11 +40,13 @@ const magicalItems = [
   },
 ];
 
+const extendedItems = [...magicalItems, ...magicalItems, ...magicalItems,...magicalItems]// uses the spread operator to extend the array to 18 
+//use fischer yates method to randomize the icons 
 // map iterates over the array and creates list items
 function Potions() {
   return (
     <>
-     { magicalItems.map((item,index)=>(
+     { extendedItems.map((item,index)=>(
       <div key={index}> 
         <img className="gridItem" src={`/${item.name}.svg`}/>
         </div>

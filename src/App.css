@@ -5,15 +5,21 @@
 .grid-container {
   border: 10px ridge rgb(54, 26, 10);
   border-radius: 12px;
-  height: 50%;
-  width: 50%;
+  height: 60%;
+  width: 60%;
   margin: 20px;
   background:linear-gradient(to bottom, #432d25, #6e4708);
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  grid: template rows 1fr;
-  gap: 0px;
+  grid-template-columns:repeat(6, 1fr);
+  grid-template-rows:repeat(4, 1fr);
+  gap: 10px;
+  padding:10px;
+  place-items: center; /* short hand for both justify content and align items. only for display: grid*/
+  
 }
 .gridItem{
   border: 1px solid white;
+  height:60px;
+  width:60px;
 }
+
