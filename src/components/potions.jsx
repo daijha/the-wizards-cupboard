@@ -1,5 +1,8 @@
 
 import React from "react";
+import { useState, useEffect } from "react";
+
+
 
 const magicalItems = [
   {
@@ -41,12 +44,31 @@ const magicalItems = [
 ];
 
 const extendedItems = [...magicalItems, ...magicalItems, ...magicalItems,...magicalItems]// uses the spread operator to extend the array to 18 
-//use fischer yates method to randomize the icons 
+//use fisher yates method to randomize the icons 
+function randomize(extendedItems){
+{  for( let i= extendedItems.length -1 ; i> 0 ; i--){
+  let j = Math.floor(Math.random()*(i+1));
+  let temp = extendedItems[i];
+  extendedItems[i]= extendedItems[j];
+  extendedItems[j]= temp  
+}
+}
+return extendedItems
+}
+
 // map iterates over the array and creates list items
 function Potions() {
+  
+const [shuffledIcons, setShuffledIcons] = useState([])// state give a container to  update the shuffle
+
+useEffect(()=>{
+  const randomized = randomize(extendedItems)
+  setShuffledIcons(randomized)// updates the state so that they are shuffled 
+},[magicalItems])// the dependency is the array of items
+
   return (
     <>
-     { extendedItems.map((item,index)=>(
+     { shuffledIcons.map((item,index)=>(
       <div key={index}> 
         <img className="gridItem" src={`/${item.name}.svg`}/>
         </div>
